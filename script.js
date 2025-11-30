@@ -136,7 +136,7 @@ document.getElementById("sendWhatsapp").addEventListener("click", function () {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    const phoneNumber = "201118726275"; // رقم الواتس الخاص بك بدون + , مثال 201234567890
+    const phoneNumber = "201118726275";
     const whatsappURL = `https://wa.me/${phoneNumber}?text=
 New Message from: ${name}%0A
 Phone: ${phone}%0A
@@ -145,3 +145,45 @@ Message: ${message}`;
 
     window.open(whatsappURL, "_blank");
 });
+//==============================
+const videos = document.querySelectorAll(".auto-control-video ");
+videos.forEach(video => {
+    video.pausedByScroll = false;
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        const video = entry.target;
+
+        if (!entry.isIntersecting) {
+            if (!video.paused) {
+                video.pausedByScroll = true;
+                video.pause();
+            }
+        } else {
+            if (video.pausedByScroll) return;
+        }
+    });
+}, { threshold: 0.6 });
+
+videos.forEach(video => {
+    observer.observe(video);
+
+    video.addEventListener("play", () => {
+        video.pausedByScroll = false;
+
+        videos.forEach(v => {
+            if (v !== video && !v.paused) {
+                v.pause();
+                v.pausedByScroll = false;
+            }
+        });
+    });
+
+    video.onended = () => {
+        video.pause();
+        video.currentTime = 0;
+        video.pausedByScroll = false;
+    };
+});
+
