@@ -11,6 +11,14 @@ AOS.init({
     offset: 100
 });
 
+// Initialize Lightbox
+if (typeof lightbox !== 'undefined') {
+    lightbox.option({
+        'resizeDuration': 200,
+        'wrapAround': true
+    });
+}
+
 // Theme Management
 const themeToggle = document.getElementById('themeToggle');
 const body = document.body;
@@ -33,6 +41,43 @@ themeToggle.addEventListener('click', () => {
     // Save theme preference
     const theme = body.classList.contains('dark-mode') ? 'dark' : 'light';
     localStorage.setItem('theme', theme);
+});
+
+// Icon Hover Effects Management
+function setupIconHoverEffects() {
+    // Get all icon hover elements
+    const socialIcons = document.querySelectorAll('.icon-hover-social');
+    const skillIcons = document.querySelectorAll('.icon-hover-skill');
+
+    // Add hover event listeners to social icons
+    socialIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', function () {
+            this.style.transform = 'scale(1.1)';
+        });
+        icon.addEventListener('mouseleave', function () {
+            this.style.transform = 'scale(1)';
+        });
+    });
+
+    // Add hover event listeners to skill icons
+    skillIcons.forEach(icon => {
+        icon.addEventListener('mouseenter', function () {
+            this.style.transform = 'scale(1.15) rotateY(10deg)';
+        });
+        icon.addEventListener('mouseleave', function () {
+            this.style.transform = 'scale(1) rotateY(0deg)';
+        });
+    });
+}
+
+// Initialize icon hover effects when DOM is ready
+document.addEventListener('DOMContentLoaded', setupIconHoverEffects);
+
+// Re-setup icon hover effects when theme changes
+const originalToggleClick = themeToggle.onclick;
+themeToggle.addEventListener('click', () => {
+    // Small delay to ensure DOM is updated
+    setTimeout(setupIconHoverEffects, 100);
 });
 
 // Mobile Menu Toggle

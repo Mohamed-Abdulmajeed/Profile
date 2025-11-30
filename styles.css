@@ -168,3 +168,103 @@ textarea:focus {
 .dark-mode .gradient-hero {
     background: linear-gradient(135deg, #0f1f3a 0%, #0A1930 100%);
 }
+
+/* Icon hover effects for light and dark modes */
+.icon-hover-primary {
+    transition: all 0.3s ease;
+}
+
+.icon-hover-primary:hover {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+.icon-hover-social {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+}
+
+.icon-hover-social:hover {
+    background-color: var(--accent-color) !important;
+    color: white !important;
+}
+
+.icon-hover-social.whatsapp:hover {
+    background-color: #25D366 !important;
+}
+
+.icon-hover-skill {
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    cursor: pointer;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+.icon-hover-skill:hover {
+    color: white !important;
+}
+
+/* Individual skill icon hover colors for both themes */
+.skill-html:hover {
+    background-color: #E44D26 !important;
+}
+
+.skill-css:hover {
+    background-color: #264DE4 !important;
+}
+
+.skill-bootstrap:hover {
+    background-color: #7952B3 !important;
+}
+
+.skill-js:hover {
+    background-color: #F7DF1E !important;
+}
+
+.skill-typescript:hover {
+    background-color: #3178C6 !important;
+}
+
+.skill-angular:hover {
+    background-color: #DD0031 !important;
+}
+
+.skill-csharp:hover {
+    background-color: var(--accent-color) !important;
+}
+
+.skill-linq:hover {
+    background-color: var(--accent-color) !important;
+}
+
+.skill-efcore:hover {
+    background-color: #512BD4 !important;
+}
+
+.skill-sql:hover {
+    background-color: #CC2927 !important;
+}
+
+.skill-mysql:hover {
+    background-color: #00758F !important;
+}
+
+.skill-git:hover {
+    background-color: #F1502F !important;
+}
+
+.skill-responsivedesign:hover {
+    background-color: var(--accent-color) !important;
+}
+
+.skill-oop:hover {
+    background-color: #512BD4 !important;
+}
+
+.skill-restapi:hover {
+    background-color: var(--accent-color) !important;
+}
+
+.skill-ai:hover {
+    background-color: #00A67E !important;
+}
