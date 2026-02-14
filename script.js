@@ -1,10 +1,4 @@
-/*
-  script.js
-  Extracted JavaScript from index.html.
-  Includes: AOS init, theme toggle, mobile menu, typing animation, contact form handling, smooth scroll
-*/
-
-// Initialize AOS (animation on scroll)
+// Initialize AOS
 AOS.init({
     duration: 800,
     once: true,
@@ -165,7 +159,7 @@ document.getElementById("sendEmail").addEventListener("click", function () {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    const mail = `mailto:mohamed.abdelmajeed.work@gmail.com?subject=New Message from ${name}&body=
+    const mail = `mailto:m7abdelmajeed@gmail.com?subject=New Message from ${name}&body=
 Name: ${name}%0A
 Phone: ${phone}%0A
 Email: ${email}%0A
