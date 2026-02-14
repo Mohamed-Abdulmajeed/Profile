@@ -98,7 +98,7 @@ mobileLinks.forEach(link => {
 
 // Typing Animation (hero)
 const typingText = document.getElementById('typingText');
-const text = 'Full Stack Web .NET Developer';
+const text = 'Full Stack Web .NET & Angular Developer';
 let index = 0;
 
 function type() {
