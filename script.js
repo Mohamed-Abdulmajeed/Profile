@@ -159,7 +159,7 @@ document.getElementById("sendEmail").addEventListener("click", function () {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
 
-    const mail = `mailto:m7abdelmajeed@gmail.com?subject=New Message from ${name}&body=
+    const mail = `mailto:mohamed.abdelmajeed.work@gmail.com?subject=New Message from ${name}&body=
 Name: ${name}%0A
 Phone: ${phone}%0A
 Email: ${email}%0A
